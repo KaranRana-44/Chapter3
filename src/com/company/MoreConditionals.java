@@ -11,21 +11,6 @@ public class MoreConditionals {
         else return false;
     }
     public static boolean isLater(int month1, int day1, int year1, int month2, int day2, int year2){
-//        if (year1==year2 && day1==day2 && month1==month2)
-//            return false;
-//        else if (year1<year2)
-//            return false;
-//        else if (year1>year2)
-//            return true;
-//        else if (month1<month2)
-//            return false;
-//        else if (month1>month2)
-//            return true;
-//        else if (day1<day2)
-//            return false;
-//        else if (day1>day2)
-//            return true;
-//        else return true;
         if (year1 != year2)
             return year1> year2;
         else if (month1 != month2)
@@ -43,24 +28,16 @@ public class MoreConditionals {
             if (size1>size2)
                 return 1;
             else return 2;
-        else if (size1>space || size2>space)
-            if (size1>space && size2<space)
-                return 2;
-            if (size2>space && size1<space)
-                return 1;
-        else if (size1 ==size2)
+        else if (size1>space && size2<space)
+            return 2;
+        else if (size2>space && size1<space)
             return 1;
         else return 0;
+
     }
 
     public static boolean makeBench(int small, int big, int goal){
-        if (goal%(5*big)%small!=0)
-            return false;
-        else if (goal/5 != big)
-            return false;
-        else if (goal/big != small)
-            return false;
-        else return true;
+        return (small+5*big >= goal && goal%5 <=small);
     }
 
 
